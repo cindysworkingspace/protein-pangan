@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="glutBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="60%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fde68a"/>
+    </linearGradient>
+    <linearGradient id="glutRibbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="180" fill="url(#glutBg)"/>
+
+  <text x="380" y="145" text-anchor="end" font-family="'JetBrains Mono', monospace, sans-serif" font-size="76" font-weight="900" fill="#ca8a04" opacity="0.12">1B98</text>
+
+  <!-- Viscoelastic elastic spiral mesh -->
+  <path d="M 40,110 C 90,40 140,140 190,60 C 240,150 290,50 360,110" 
+        stroke="url(#glutRibbon)" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <circle cx="190" cy="60" r="7" fill="#ca8a04" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="270" cy="80" r="8" fill="#a16207" stroke="#ffffff" stroke-width="2"/>
+
+  <g transform="translate(20, 20)">
+    <rect width="145" height="28" rx="14" fill="#ffffff" stroke="#fde047" stroke-width="1.2"/>
+    <text x="14" y="19" font-size="14">🌾</text>
+    <text x="36" y="18" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#854d0e">Gluten Gandum</text>
+  </g>
+</svg>

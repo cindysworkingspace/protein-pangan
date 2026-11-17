@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="actinBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff1f2"/>
+      <stop offset="60%" stop-color="#ffe4e6"/>
+      <stop offset="100%" stop-color="#fecdd3"/>
+    </linearGradient>
+    <linearGradient id="actinRibbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#be123c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="180" fill="url(#actinBg)"/>
+
+  <g stroke="#f43f5e" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.25">
+    <line x1="20" y1="30" x2="380" y2="30"/>
+    <line x1="20" y1="90" x2="380" y2="90"/>
+    <line x1="20" y1="150" x2="380" y2="150"/>
+  </g>
+
+  <text x="380" y="145" text-anchor="end" font-family="'JetBrains Mono', monospace, sans-serif" font-size="76" font-weight="900" fill="#e11d48" opacity="0.12">1EQY</text>
+
+  <!-- Myofilament double-helical polymer strand -->
+  <path d="M 40,80 C 100,140 160,50 220,110 C 280,170 330,60 370,100" 
+        stroke="url(#actinRibbon)" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <path d="M 40,110 C 90,50 170,160 230,80 C 290,20 340,130 370,80" 
+        stroke="#9f1239" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+  <circle cx="220" cy="110" r="8" fill="#e11d48" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="160" cy="50" r="7" fill="#be123c" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Badge explicitly displaying Otot Kelinci -->
+  <g transform="translate(20, 20)">
+    <rect width="145" height="28" rx="14" fill="#ffffff" stroke="#fda4af" stroke-width="1.2"/>
+    <text x="14" y="19" font-size="14">🐇</text>
+    <text x="36" y="18" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#9f1239">Otot Kelinci</text>
+  </g>
+</svg>

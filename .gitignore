@@ -1,0 +1,29 @@
+# Environment variables
+.env
+.env.*
+.env.local
+.env.production
+.env.development
+!.env.example
+
+# Sensitive files / keys / certs
+*.pem
+*.key
+*.cert
+*.crt
+
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+tmp/
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.swp
+*.DS_Store
+Thumbs.db

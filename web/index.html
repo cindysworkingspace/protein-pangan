@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protein Pangan — Platform Analisis & Visualisasi 3D Protein</title>
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="/" class="brand-logo">
+        <img src="/images/emblem.svg" alt="Logo Protein Pangan" class="brand-emblem-img">
+        <div class="brand-text">
+          <span class="brand-title">Protein<span class="brand-accent">Pangan</span></span>
+          <span class="brand-sub">Platform Analisis &amp; 3D</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="/" class="active">Katalog</a>
+        <a href="/compare">Perbandingan</a>
+        <a href="https://www.rcsb.org/" target="_blank" rel="noopener" class="nav-ext">RCSB PDB ↗</a>
+        <a href="https://www.uniprot.org/" target="_blank" rel="noopener" class="nav-ext">UniProt ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Hero Banner with 2-Column Biotech Design -->
+    <section class="hero-section">
+      <div class="hero-grid">
+        <div class="hero-content-col">
+          <div class="hero-badge-wrap">
+            <span class="hero-badge">
+              <span class="pulse-dot"></span>
+              Bio-Nutrisi &amp; Sains Pangan
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            Eksplorasi Struktur &amp; Karakteristik <span class="gradient-text">Protein Pangan</span>
+          </h1>
+
+          <p class="hero-desc">
+            Aplikasi referensi interaktif untuk riset biologi dan teknologi pangan. Pelajari arsitektur molekuler kristalografi 3D, kalkulasi daya cerna DIAAS, serta pemetaan profil asam amino protein hewani dan nabati.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#katalog-section" class="btn btn-primary btn-lg">
+              🔍 Jelajahi Katalog
+            </a>
+            <a href="/compare" class="btn btn-secondary btn-lg">
+              ⚖️ Komparasi Protein
+            </a>
+          </div>
+
+          <!-- Live Stats Metric Cards -->
+          <div class="stats-bar">
+            <div class="stat-card">
+              <div class="stat-icon-wrap" style="background: rgba(13, 148, 136, 0.1); color: var(--primary);">
+                🧬
+              </div>
+              <div class="stat-info">
+                <span class="stat-num" id="stat-total">-</span>
+                <span class="stat-label">Total Protein</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap" style="background: rgba(239, 68, 68, 0.1); color: #dc2626;">
+                🥩
+              </div>
+              <div class="stat-info">
+                <span class="stat-num" id="stat-hewani">-</span>
+                <span class="stat-label">Sumber Hewani</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap" style="background: rgba(34, 197, 94, 0.1); color: #16a34a;">
+                🌱
+              </div>
+              <div class="stat-info">
+                <span class="stat-num" id="stat-nabati">-</span>
+                <span class="stat-label">Sumber Nabati</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap" style="background: rgba(59, 130, 246, 0.1); color: var(--accent);">
+                🔬
+              </div>
+              <div class="stat-info">
+                <span class="stat-num">3Dmol</span>
+                <span class="stat-label">Viewer WebGL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Science Visual Graphic -->
+        <div class="hero-visual-col">
+          <div class="hero-visual-card">
+            <img src="/images/protein-hero.svg" alt="Visualisasi Struktur Tersier Molekul Protein" class="hero-visual-img">
+            <div class="hero-floating-chip chip-top">
+              <span class="chip-dot"></span>
+              <span>Visualisasi Kristal 3D Real-Time</span>
+            </div>
+            <div class="hero-floating-chip chip-bottom">
+              <span>📊 Analisis Lengkap Asam Amino</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls: Search, Filter Category, Sort -->
+    <section id="katalog-section" class="controls-card">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Cari nama protein, sumber pangan, atau PDB ID..." autocomplete="off">
+        <button id="clearSearchBtn" class="clear-search-btn" title="Hapus pencarian" style="display: none;">✕</button>
+      </div>
+
+      <div class="filter-group">
+        <button class="filter-btn active" data-category="Semua">
+          Semua
+        </button>
+        <button class="filter-btn" data-category="Hewani">
+          🥩 Hewani
+        </button>
+        <button class="filter-btn" data-category="Nabati">
+          🌱 Nabati
+        </button>
+      </div>
+
+      <div class="sort-group">
+        <label for="sortSelect">Urutkan:</label>
+        <div class="select-wrapper">
+          <select id="sortSelect" class="sort-select">
+            <option value="name_asc">Nama (A - Z)</option>
+            <option value="name_desc">Nama (Z - A)</option>
+            <option value="mw_asc">Berat Molekul (Terendah)</option>
+            <option value="mw_desc">Berat Molekul (Tertinggi)</option>
+            <option value="score_desc">Skor Daya Cerna (Tertinggi)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Counter Bar -->
+    <div class="results-header">
+      <h2 class="section-title">Katalog Protein Pangan</h2>
+      <span class="results-count" id="resultsCount">Memuat data...</span>
+    </div>
+
+    <!-- Grid Container -->
+    <section>
+      <div id="loader" class="loader-spinner"></div>
+      <div id="proteinGrid" class="protein-grid" style="display: none;"></div>
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <div class="empty-icon">🔬</div>
+        <h3>Tidak ada data protein ditemukan</h3>
+        <p>Coba gunakan kata kunci pencarian lain atau ubah filter kategori.</p>
+        <button class="btn btn-secondary btn-sm" onclick="resetFilters()">Reset Filter</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating Comparison Bar -->
+  <aside id="compareBar" class="compare-bar hidden">
+    <div class="compare-bar-info">
+      <span class="compare-bar-badge" id="compareCountBadge">0</span>
+      <span class="compare-bar-text" id="compareBarText">0 protein dipilih untuk perbandingan</span>
+    </div>
+    <div class="compare-bar-actions">
+      <button class="btn btn-secondary btn-sm" id="clearCompareBtn">Batal</button>
+      <a href="/compare" class="btn btn-primary btn-sm" id="goToCompareBtn">Bandingkan Sekarang →</a>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/images/emblem.svg" alt="Emblem Protein Pangan" width="32" height="32">
+          <span>Protein Pangan</span>
+        </div>
+        <p class="footer-tagline">
+          Platform Riset &amp; Edukasi Karakteristik Fisikokimia, Visualisasi 3D, dan Nutrisi Protein Pangan.
+        </p>
+      </div>
+      <div class="footer-meta">
+        <p>Data bersumber dari <a href="https://www.rcsb.org/" target="_blank" rel="noopener">RCSB Protein Data Bank</a> dan <a href="https://www.uniprot.org/" target="_blank" rel="noopener">UniProt KB</a>.</p>
+        <p>© 2026 Protein Pangan. Dibangun dengan Go Gin &amp; PostgreSQL Neon.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
